@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Music player</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <!------ search bar ------->
+<header>
+  <div class="search active">
+      <div class="icon"></div>
+      <div class="input">
+        <input type="text" placeholder="Search" id="mysearch">
+      </div>
+      <span class="clear" onclick="document.getElementById('mysearch').value = '' "></span>
+    </div>
+</header>
+
+  <!----- toggle switch---->
+
+  <label class="switch">
+    <input class="switch_input" type="checkbox" data-theme-toggle>
+    <span class="switch_slider"></span>
+  </label>
+
+  <audio src="" id="audio-source"></audio>
+
+  <!---home section-->
+
+  <section class="home-section">
+
+    <!--carousel-->
+    <div class="carousel">
+      <img src="images/cover 1.png" class="active" alt="">
+      <img src="images/cover 2.png" alt="">
+      <img src="images/cover 3.png" alt="">
+      <img src="images/cover 4.png" alt="">
+      <img src="images/cover 5.png" alt="">
+    </div>
+
+    <!--playlists-->
+    <h1 class="heading">Popular Songs</h1>
+    <div class="playlists-group">
+      <div class="playlist-card">
+        <img src="images/cover 9.png" class="playlist-card-img" alt="">
+        <p class="playlist-card-name">top international</p>
+      </div>
+      <div class="playlist-card">
+        <img src="images/cover 2.png" class="playlist-card-img" alt="">
+        <p class="playlist-card-name">BTS collection</p>
+      </div>
+      <div class="playlist-card">
+        <img src="images/cover 10.png" class="playlist-card-img" alt="">
+        <p class="playlist-card-name">bollywood hits</p>
+      </div>
+      <div class="playlist-card">
+        <img src="images/cover 11.png" class="playlist-card-img" alt="">
+        <p class="playlist-card-name">top 50</p>
+      </div>
+      <div class="playlist-card">
+        <img src="images/cover 5.png" class="playlist-card-img" alt="">
+        <p class="playlist-card-name">justin biber</p>
+      </div>
+    </div>
+    <h1 class="heading">Popular Singers</h1>
+    <div class="playlists-group">
+
+      <div class="playlist-card">
+        <button onclick="document.location='gurnazarchattha.html'">
+          <img src="images/Gurnazar Chattha.jpg" class="playlist-card-img" alt="">
+          <p class="playlist-card-name">Gurnazar chattha</p>
+        </button>
+      </div>
+
+      <div class="playlist-card">
+        <button onclick="document.location='Hansraj Raghuwanshi.html'">
+          <img src="images/Hansraj Raghuwanshi.jpg" class="playlist-card-img" alt="">
+          <p class="playlist-card-name">Hansraj Raghuwanshi</p>
+        </button>
+      </div>
+
+      <div class="playlist-card">
+        <button onclick="document.location='Jass Manak.html'">
+          <img src="images/jass manak.jpg" class="playlist-card-img" alt="">
+          <p class="playlist-card-name">Jass Manak</p>
+        </button>
+      </div>
+
+      <div class="playlist-card">
+        <button onclick="document.location='Nikk.html'">
+          <img src="images/Nikk.jpg" class="playlist-card-img" alt="">
+          <p class="playlist-card-name">Nikk</p>
+        </button>
+      </div>
+
+      <div class="playlist-card">
+        <button onclick="document.location='Hardy Sandhu.html'">
+          <img src="images/Hardy Sandhu.jpg" class="playlist-card-img" alt="">
+          <p class="playlist-card-name">Hardy Sandhu</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!------ music player section -->
+  <section class="music-player-section ">
+
+    <img src="images/back.png" class="back-btn icon hide" alt="">
+    <img src="images/nav.png" class="nav-btn icon hide" alt="">
+
+    <h1 class="current-song-name">song 1</h1>
+    <p class="artist-name hide">artist 1</p>
+
+    <img src="images/cover 1.png" class="cover hide" alt="">
+
+    <div class="seek-bar-container">
+      <input type="range" class="music-seek-bar" value="0">
+      <p class="current-time hide">00 : 00</p>
+      <p class="duration hide">00 : 00</p>
+    </div>
+
+    <div class="controls">
+      <span class="fas fa-redo"></span>
+      <div class="main">
+        <i class="fas fa-backward active"></i>
+        <i class="fas fa-play active"></i>
+        <i class="fas fa-pause"></i>
+        <i class="fas fa-forward active"></i>
+      </div>
+      <input type="range" class="volume-slider" max="1" value="1" step="0.1">
+      <span class="fas fa-volume-up"></span>
+    </div>
+  </section>
+
+  <!----- playlist section ------>
+
+  <section class=" playlist active ">
+
+    <img src="images/back.png" class="back-btn icon" alt="">
+
+    <h1 class="title">playlist</h1>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Backbone.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Backbone</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Badaami Rang.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Badaami Rang</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/Bhala.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Bhala</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Bijlee.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Bijlee</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/Butterfly.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Butterfly</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Chaar Chudiyaan.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Chaar Chudiyaan</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/Damru Bajaye.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Damru Bajaye</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Gurnazar Medley.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Gurnazar Medley</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Hasdi Reya Kar.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Hasdi Reya Kar</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Hauli Hauli.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Hauli Hauli</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Horn Blow.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Horn Blow</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/I Promise.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">I Promise</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Jee karda daa.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Jee karda daa</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Kar Promise.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Kar Promise</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Khair Mangdi.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Khair Mangdi</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Koi Vi Nahi.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Koi Vi Nahi</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Kudi Kudi.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Kudi Kudi</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/Mere Shankara.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Laagi Lagan Shankara</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/Lehenga.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Lehenga</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/Main Shiv Ka Shiv Mere.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Main Shiv Ka Shiv Mere</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Naa ji Naa.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Naa ji Naa</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Naah.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Naah</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Nakhre Tere.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Nakhre Tere</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/No competition.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">No Competition</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Pinjraa.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Pinjraa</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/Shiv sama rahe.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Shiv sama rahe</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/cover 2.png" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Song 2</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/cover 3.png" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">song 3</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/cover 4.png" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">song 4</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/cover 5.png" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">song 5</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/cover 6.png" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">song 6</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/cover 7.png" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">song 7</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/cover 8.png" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">song 8</p>
+    </div>
+
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Tabaah.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Tabaah</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Titliaan.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Titliaan</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Wah Ji Waah.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Wah Ji Waah</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/yaara tera warga.jpeg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Yaara Tere Warga</p>
+    </div>
+
+    <div class="queue active">
+      <div class="queue-cover">
+        <img src="images/yes or no.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Yes Or No</p>
+    </div>
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Yaari.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Yaari</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Yaarr Ni Miliyaa.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Yaarr Ni Milyaa</p>
+    </div>
+
+    <div class="queue actives">
+      <div class="queue-cover">
+        <img src="images/Yaarr Superstaar.jpg" alt="">
+        <i class="fas fa-pause"></i>
+      </div>
+      <p class="name">Yaarr Superstaar</p>
+    </div>
+   </section>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+
+
+</body>
+</html>
